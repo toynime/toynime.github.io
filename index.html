@@ -30,11 +30,11 @@
  
                 
         
-  .title{
+  .title , .title2{
     position:relative;
 }
 
-.title hr{
+.title hr , .title2 hr{
     border:none;
     height:2px;
     background:cyan;
@@ -45,7 +45,7 @@
     z-index:1;
 }
 
-.title h2{
+.title h2 , .title2 h2{
     border: 2px solid cyan;
     padding: 25px;
     border-radius: 15px;
@@ -80,9 +80,35 @@ a img:hover{
  top: -20px;   
 }
 
+.calculator{
+    position: relative;
+    margin-top: 300px;
+}
+.calculator img{
+    position: absolute;
+    left: 550px;
+    top: -50px; 
+    transition: all 0.5s;  
+}
+.calculator img:hover{
+    width: 225px;
+    height: 295px;
+}
+
+.skilles{
+    position: relative;
+    margin-top: 200px;
+}
+.title2 h2{
+    left: 580px;
+    padding-left: 50px;
+    padding-right: 50px
+}
+  
 
 
-       
+
+
 
 
 
@@ -128,7 +154,7 @@ a img:hover{
 <body>
   <header>
     <p class="hello"><i>Hello <span>👋</span></i></p>
-    <h1>Im <u><a href="https://www.linkedin.com/in/anas-%E2%80%8Eait-mouddar-01825b299/" target="_blank">Anas AIt Mouddar</a></u></h1>
+    <h1>Im <u><a href="https://www.linkedin.com/in/anas-%E2%80%8Eait-mouddar-01825b299/" target="_blank">Anas Ait Mouddar</a></u></h1>
     <h2>Full Stack Web Developer Student<h2>
   </header>
   <div class="project-box" style="margin-top: 250px;">
@@ -149,9 +175,27 @@ a img:hover{
         <source src="Trailer.mp4" type="video/mp4">
     </video>
    </div>
+   <div class="calculator">
+   <h2 style="font-size: 30px;">Calculator <br><br><span style="font-weight:100;font-size: 25px;">With HTML/CSS & JavaScript</span><br><br><a href="https://github.com/toynime/calculator" target="_blank" style="color: cyan;font-weight:100;font-size: 25px;">GitHub↗</a></h2>
+   <a href="https://toynime.github.io/calculator/" target="_blank"><img src="calc.PNG" width="200px" height="270px;"></a>
+</div>
 </div>
 
-
+<div class="skilles">
+  <div class="title2">
+     <hr>
+     <h2 style="font-size: 30px">Skills</h2>
+  </div>
+  <ul>
+    <li><h2>HTML/CSS</h2></li>
+    <li><h2>JavaScript</h2></li>
+    <li><h2>PHP</h2></li>
+    <li><h2>C</h2></li>
+    <li><h2>SQL</h2></li>
+    <li><h2>PYTHON</h2></li>
+    <li><h2>Learning C#</h2></li>
+  </ul>
+</div>
 
 
 
@@ -190,4 +234,5 @@ document.addEventListener("mousemove", (e) => {
 });
 </script>
 </body>
+</html>
 </html>
