@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anas Ait Mouddar</title>
+    <style>
+        body{
+        background:#111;
+        color:white;
+        }
+        header{
+            text-align: center;
+        }
+        .hello,h1{
+            font-size: 50px;
+            text-align: center;
+        }
+        a{
+            color: white;
+        }
+        .hello span{
+            display: inline-block;
+            animation: ll 0.5s infinite alternate;
+        }
+        @keyframes ll{
+             from { transform: rotate(-1deg); }
+            to { transform: rotate(30deg); }
+        }
+ 
+                
+        
+  .title{
+    position:relative;
+}
+
+.title hr{
+    border:none;
+    height:2px;
+    background:cyan;
+    position:absolute;
+    top:12px;       
+    left:0;
+    width:100%;
+    z-index:1;
+}
+
+.title h2{
+    border: 2px solid cyan;
+    padding: 25px;
+    border-radius: 15px;
+    position:relative;
+    z-index:2;
+    display:inline-block;
+    background:#111;
+    padding:0 20px;
+    margin:0 auto;
+    left:42%;
+}
+.project-box{
+    position: relative;
+}
+.cards a img{
+    position: absolute;
+    left: 550px;;
+    top: 50px;
+    transition: all 0.5s;
+}
+a img:hover{
+    width: 450px;
+    height: 250px;
+}
+.shooter{
+    margin-top: 225px;
+    position: relative;
+}        
+.shooter video{
+ position: absolute;
+ left: 550px;
+ top: -20px;   
+}
+
+
+
+       
+
+
+
+.eyes{
+    position: fixed;
+    right: 20px;
+    top: 10%;
+    transform: translateY(-50%);
+
+    display: flex;
+    gap: 20px;
+
+    z-index: 9999;
+}
+
+
+.eye {
+    width: 70px;
+    height: 40px;
+    background: white;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.pupil {
+    width: 8px;
+    height: 20px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+    </style>
+</head>
+<body>
+  <header>
+    <p class="hello"><i>Hello <span>👋</span></i></p>
+    <h1>Im <u><a href="https://www.linkedin.com/in/anas-%E2%80%8Eait-mouddar-01825b299/" target="_blank">Anas AIt Mouddar</a></u></h1>
+    <h2>Full Stack Web Developer Student<h2>
+  </header>
+  <div class="project-box" style="margin-top: 250px;">
+    <div class="title">
+    <hr>
+    <h2 style="font-size: 30px">PROJECTS</h2>
+    </div><br><br><br>
+   <div class="cards">
+    <h2 style="font-size: 30px;">Working On A Card Game (Randa ♣️)<br><br><span style="font-weight:100;font-size: 25px;">With HTML/CSS & JavaScript<br><br><a href="https://github.com/toynime/Card-game" target="_blank" style="color: cyan;">GitHub↗</a></span>
+    <a href="https://toynime.github.io/Card-game/" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Jeu_de_ronda.jpg" width="500px" height="300px;">
+    </a>
+   </div><br><br>
+
+   <div class="shooter"><br><br>
+    <h2 style="font-size: 30px;">Shooter game with Unity<br><br><a href="https://github.com/toynime/Card-game" target="_blank" style="color: cyan;font-weight:100;font-size: 25px;">GitHub↗</a></h2>
+    <video controls autoplay muted width="500px" height="300px">
+        <source src="Trailer.mp4" type="video/mp4">
+    </video>
+   </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="eyes">
+    <div class="eye">
+    <div class="pupil"></div>
+</div>
+
+<div class="eye">
+    <div class="pupil"></div>
+</div>
+</div>
+<script>
+   const eyes = document.querySelectorAll(".eye");
+document.addEventListener("mousemove", (e) => {
+    eyes.forEach(eye => {
+        const pupil = eye.querySelector(".pupil");
+
+        const rect = eye.getBoundingClientRect();
+
+        const eyeX = rect.left + rect.width / 2;
+        const eyeY = rect.top + rect.height / 2;
+
+        const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
+        const maxX = (rect.width - pupil.offsetWidth) / 2 - 3;
+        const maxY = (rect.height - pupil.offsetHeight) / 2 - 3;
+
+        const x = Math.cos(angle) * maxX;
+        const y = Math.sin(angle) * maxY;
+
+        pupil.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+    });
+});
+</script>
+</body>
+</html>
